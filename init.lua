@@ -1,3 +1,5 @@
+require('user.machine')
+
 return {
   colorscheme = 'tokyonight',
   plugins = {
