@@ -6,17 +6,13 @@ return {
     local diagnostics = null_ls.builtins.diagnostics
 
     opts.sources = {
-      formatting.prettier.with({ extra_args = { '--no-semi', '--single-quote' } })
+      formatting.prettier.with { extra_args = { "--no-semi", "--single-quote", "--jsx-singin-quote" } },
+      -- formatting.eslint_d,
       formatting.stylua,
-      formatting.black.with({ extra_args = { '--fast' } }),
+      formatting.black.with { extra_args = { "--fast" } },
       formatting.shfmt.with {
         args = { "-i", "2" },
       },
-      diagnostics.eslint_d.with({
-        condition = funtion(utils) {
-          return utils.root_has_file('.eslintrc.js')
-        }
-      })
       diagnostics.luacheck,
       diagnostics.flake8,
     }
