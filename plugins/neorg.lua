@@ -1,17 +1,19 @@
 return {
   {
     "nvim-neorg/neorg",
+    lazy = false,
     build = ":Neorg sync-parsers",
-    ft = "norg",
     opts = {
       load = {
-        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {      -- Manages Neorg workspaces
+        ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/notes",
+              vite = "~/Github/vite-project",
             },
+            default_workspace = "notes",
           },
         },
       },
