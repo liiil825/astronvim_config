@@ -1,5 +1,7 @@
 return {
   n = {
+    ["<leader>bp"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
+    ["<leader>bn"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
     ["<leader>H"] = { "<cmd>checkhealth<cr>", desc = "Run cmd checkhealth" },
     ["|"] = "",
     [";"] = { ":", desc = "Enter command mode" },
@@ -15,6 +17,7 @@ return {
     ["<localleader>wl"] = { "<cmd>WorkspacesList<cr>", desc = "Workspaces List" },
     ["<localleader>n"] = { desc = " Neorg" },
     ["<localleader>ni"] = { "<cmd>Neorg index<cr>", desc = "Neorg index" },
+    ["<localleader>nt"] = { "<cmd>Neorg index<cr>", desc = "Neorg index" },
     ["<localleader>nr"] = { "<cmd>Neorg return<cr>", desc = "Neorg return" },
     ["<localleader>nj"] = { "<cmd>Neorg journal<cr>", desc = "Neorg journal" },
     ["<localleader>nw"] = { ":Neorg workspace ", desc = "Neorg workspaces" },
