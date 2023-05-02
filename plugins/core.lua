@@ -1,16 +1,16 @@
 return {
   {
-    "liiil825/nvimacs", -- Bring Emacs key bindings to Neovim.
+    'liiil825/nvimacs', -- Bring Emacs key bindings to Neovim.
     event = {
-      "InsertEnter *",
-      "CmdlineEnter *",
+      'InsertEnter *',
+      'CmdlineEnter *',
     },
   },
   {
-    "dhruvasagar/vim-table-mode", -- table 自动
+    'dhruvasagar/vim-table-mode', -- table 自动
     lazy = false,
   },
   {
-    "ThePrimeagen/git-worktree.nvim",
+    'ThePrimeagen/git-worktree.nvim',
   },
 }
