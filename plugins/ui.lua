@@ -1,5 +1,14 @@
 return {
   {
+    'goolord/alpha-nvim',
+    opts = function(_, opts) -- override the options using lazy.nvim
+      opts.section.header.val = { -- change the header section value
+        '    My Custom ',
+        ' Dashboard Header',
+      }
+    end,
+  },
+  {
     'xiyaowong/transparent.nvim',
     lazy = false,
     config = function()
@@ -32,7 +41,7 @@ return {
         'CursorLineNr',
         'EndOfBuffer',
       },
-      extra_groups = {},   -- table: additional groups that should be cleared
+      extra_groups = {}, -- table: additional groups that should be cleared
       exclude_groups = {}, -- table: groups you don't want to clear
     },
   },

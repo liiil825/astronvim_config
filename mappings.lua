@@ -16,6 +16,16 @@ return {
       end,
       desc = 'Find words',
     },
+    ['<leader>fW'] = {
+      function()
+        require('telescope').extensions.live_grep_args.live_grep_args {
+          additional_args = function(args)
+            return vim.list_extend(args, { '--hidden', '--no-ignore' })
+          end,
+        }
+      end,
+      desc = 'Find words',
+    },
     ['|'] = '',
     [';'] = { ':', desc = 'Enter command mode' },
     ['\\'] = { '<cmd>vsplit<cr>', desc = 'Vertical split' },
@@ -30,9 +40,9 @@ return {
     },
     ['<localleader>n'] = { desc = ' Neorg' },
     ['<localleader>ni'] = { '<cmd>Neorg index<cr>', desc = 'Neorg index' },
-    ['<localleader>nt'] = {
+    ['<localleader>ng'] = {
       '<cmd>e ~/notes/todo.norg<cr>',
-      desc = 'Neorg todo',
+      desc = 'Neorg todo list',
     },
     ['<localleader>nr'] = { '<cmd>Neorg return<cr>', desc = 'Neorg return' },
     ['<localleader>nj'] = { '<cmd>Neorg journal<cr>', desc = 'Neorg journal' },
@@ -40,5 +50,17 @@ return {
   },
   v = {
     ['<leader>y'] = { '"+y', desc = 'Copy to clipboard' },
+  },
+  x = {
+    ['s'] = { desc = 'Surround' },
+    ['sk'] = {
+      -- ':<C-u>normal! `>a*<esc>`<i*<esc>',
+      "<Esc><Cmd>lua require'nvim-surround'.visual_surround({ line_mode = false })<CR>*",
+      desc = '*{visual selection}*',
+    },
+    ['sl'] = {
+      "<Esc><Cmd>lua require'nvim-surround'.visual_surround({ line_mode = false })<CR>(",
+      desc = '({visual selection})',
+    },
   },
 }
