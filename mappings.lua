@@ -2,6 +2,7 @@ return {
   n = {
     ["<leader>bp"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
     ["<leader>bn"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+    ["<leader>lm"] = { "<cmd>Mason<cr>", desc = "Mason" },
     ["<M-[>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
     ["<M-]>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
     ["<leader>H"] = { "<cmd>checkhealth<cr>", desc = "Run cmd checkhealth" },
@@ -17,7 +18,7 @@ return {
     ["<localleader>m"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview Toggle" },
     ["<localleader>n"] = { desc = " Neorg" },
     ["<localleader>ni"] = { "<cmd>Neorg index<cr>", desc = "Neorg index" },
-    ["<localleader>nt"] = { "<cmd>Neorg index<cr>", desc = "Neorg index" },
+    ["<localleader>nt"] = { "<cmd>e ~/notes/todo.norg<cr>", desc = "Neorg todo" },
     ["<localleader>nr"] = { "<cmd>Neorg return<cr>", desc = "Neorg return" },
     ["<localleader>nj"] = { "<cmd>Neorg journal<cr>", desc = "Neorg journal" },
     ["<localleader>nw"] = { ":Neorg workspace ", desc = "Neorg workspaces" },

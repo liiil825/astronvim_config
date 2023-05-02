@@ -3,6 +3,7 @@ return {
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
     { "nvim-telescope/telescope-live-grep-args.nvim" },
+    { "JoosepAlviste/nvim-ts-context-commentstring" },
   },
   cmd = "Telescope",
   opts = function()
