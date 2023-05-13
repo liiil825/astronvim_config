@@ -8,6 +8,8 @@ return {
     },
     { 'nvim-telescope/telescope-live-grep-args.nvim' },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    'nvim-lua/plenary.nvim',
+    'debugloop/telescope-undo.nvim',
   },
   cmd = 'Telescope',
   opts = function()
@@ -44,5 +46,22 @@ return {
       },
     }
   end,
-  config = require 'plugins.configs.telescope',
+  config = function(_, opts)
+    require('telescope').setup {
+      extensions = {
+        undo = {
+          -- telescope-undo.nvim config, see below
+          -- https://github.com/debugloop/telescope-undo.nvim#configuration
+          side_by_side = true,
+          layout_strategy = 'vertical',
+          layout_config = {
+            preview_height = 0.8,
+          },
+        },
+      },
+    }
+    require('telescope').load_extension 'undo'
+    -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    require 'plugins.configs.telescope' (_, opts)
+  end,
 }

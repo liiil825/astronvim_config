@@ -7,12 +7,14 @@ return {
     },
   },
   {
-    'dhruvasagar/vim-table-mode', -- table 自动
-    lazy = false,
+    'godlygeek/tabular',
+    event = 'User AstroFile',
   },
   {
-    'ThePrimeagen/git-worktree.nvim',
+    'dhruvasagar/vim-table-mode', -- table 自动
+    event = 'User AstroFile',
   },
+  'ThePrimeagen/git-worktree.nvim',
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
