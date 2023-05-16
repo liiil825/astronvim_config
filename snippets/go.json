@@ -1,0 +1,16 @@
+{
+  "setup": {
+    "prefix": ["setup", ">pkgm"],
+    "body": [
+      "package main",
+      "",
+      "import(",
+      "\t$1",
+      ")",
+      "func main() {",
+      "\t$2",
+      "}"
+    ],
+    "description": "My standard setup go"
+  }
+}

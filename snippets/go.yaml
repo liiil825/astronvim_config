@@ -1,0 +1,7 @@
+setup:
+  prefix:
+    - ">pkg"
+    - "setup"
+  body:
+    - hello
+  description: My standard setup Go

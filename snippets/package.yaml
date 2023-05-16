@@ -1,0 +1,7 @@
+name: user sniipets
+engines:
+  vscode: ^1.11.0
+contributes:
+  snippets:
+    - language: go
+      path: ./go.yaml
