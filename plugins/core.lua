@@ -60,7 +60,7 @@ return {
   {
     'L3MON4D3/LuaSnip',
     config = function(plugin, opts)
-      require 'plugins.configs.luasnip'(plugin, opts) -- include the default astronvim config that calls the setup call
+      require 'plugins.configs.luasnip' (plugin, opts) -- include the default astronvim config that calls the setup call
       require('luasnip.loaders.from_vscode').lazy_load {
         paths = { './lua/user/snippets' },
       } -- load snippets paths
@@ -69,8 +69,8 @@ return {
   {
     'ggandor/leap.nvim',
     keys = {
-      { 's', mode = { 'n', 'x', 'o' }, desc = 'Leap forward to' },
-      { 'S', mode = { 'n', 'x', 'o' }, desc = 'Leap backward to' },
+      { 's',  mode = { 'n', 'x', 'o' }, desc = 'Leap forward to' },
+      { 'S',  mode = { 'n', 'x', 'o' }, desc = 'Leap backward to' },
       { 'gs', mode = { 'n', 'x', 'o' }, desc = 'Leap from windows' },
     },
     config = function(_, opts)
@@ -81,6 +81,36 @@ return {
       leap.add_default_mappings(true)
       vim.keymap.del({ 'x', 'o' }, 'x')
       vim.keymap.del({ 'x', 'o' }, 'X')
+    end,
+  },
+  {
+    'nathom/filetype.nvim',
+    lazy = false,
+    opts = {
+      overrides = {
+        literal = {
+          justfile = 'just',
+        },
+        complex = {
+          ['git/git.config'] = 'gitconfig', -- Included in the plugin
+        },
+      },
+    },
+  },
+  {
+    'IndianBoy42/tree-sitter-just',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = 'BufEnter',
+    config = function()
+      require('nvim-treesitter.parsers').get_parser_configs().just = {
+        install_info = {
+          url = 'https://github.com/IndianBoy42/tree-sitter-just', -- local path or git repo
+          files = { 'src/parser.c', 'src/scanner.cc' },
+          branch = 'main',
+          -- use_makefile = true -- this may be necessary on MacOS (try if you see compiler errors)
+        },
+        maintainers = { '@IndianBoy42' },
+      }
     end,
   },
 }

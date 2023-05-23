@@ -13,6 +13,7 @@ return {
       user_default_options = {
         tailwind = true,
         hsl_fn = true,
+        rgb_fn = true,
       },
     },
   },
